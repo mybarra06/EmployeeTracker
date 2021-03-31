@@ -8,13 +8,13 @@ INSERT INTO department (name)
 VALUES ("Engineering");
 
 INSERT INTO role (title, salary, department_id)
-VALUES ("Manager", 150000, 1);
+VALUES ("Manager", 80000, 1);
 
 INSERT INTO role (title, salary, department_id)
-VALUES ("Salesperson", 100000, 2);
+VALUES ("Salesperson", 60000, 2);
 
 INSERT INTO role (title, salary, department_id)
-VALUES ("Engineer", 80000, 3);
+VALUES ("Engineer", 100000, 3);
 
 INSERT INTO employee (first_name, last_name, role_id)
 VALUES ("Britney", "Spears", 1 );
