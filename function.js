@@ -1,11 +1,11 @@
 const inquirer = require("inquirer");
-const connection = require("./db/index.js");
+const connection = require("./db/index");
 
 class Database {
     constructor(connection) {
         this.connection = connection;
     }
-    /////////////////////// view methods (department, role, employee)
+ // view methods (department, role, employee)
     department_view() {
         return this.connection.query("SELECT * FROM department");
     }
@@ -21,7 +21,7 @@ class Database {
         return this.connection.query("SELECT * FROM employee WHERE role_id=1");
     }
 
-    ////////add methods (department, role, employee)
+     //add methods (department, role, employee)
     department_add() {
         return this.connection.query(
                     "INSERT INTO department (name) VALUES (?)",
@@ -45,7 +45,7 @@ class Database {
     }
 
 
-    ///////////////update method for employee
+    ////update method for employee
     employee_update() {
                 return this.connection.query(
                     "Update employee SET role_id = ? WHERE first_name = ?",

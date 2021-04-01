@@ -1,24 +1,22 @@
-const inquirer = require("inquirer");
+// const inquirer = require("inquirer");
 const { prompt } = require("inquirer");
 const mysql = require("mysql");
 // const { department_add } = require("./functions");
-const database = require("./functions");
+const database = require("./function");
 // console table
-require("console.table");
 
 
-init();
 
-function init() {
+// function init() {
 
-  loadPrompts();
-}
+//   loadPrompts();
+// }
 
-function loadPrompts() {
+async function init() {
 
-  prompt([
+ const {menu} = await prompt(
     {
-      name: "Menu",
+      name: "menu",
       type: "list",
       message: "What would you like to do?",
       choices: [
@@ -31,37 +29,38 @@ function loadPrompts() {
         "Update Employee Role",
       ],
     },
-  ])
-    .then(function (answer) {
-      switch (answer.Menu) {
-        case "View Employees":
-          viewAllEmployees();
-          break;
-        case "View Roles":
-          viewAllRoles();
-          break;
-        case "View Departments":
-          viewAllDepartments();
-          break;
-        case "Add Employee":
-          addEmployee();
-          break;
-        case "Add Role":
-          addRole();
-          break;
-        case "Add Department":
-          addDepartment();
-          break;
-        case "Update Employee Role":
-          updateEmployeeRole();
-          break;
-        default:
-          init();
-      }
-    });
+  );
+  console.log(menu)
+  // .then(function (answer) {
+  //     switch (answer.Menu) {
+  //       case "View Employees":
+  //         viewAllEmployees();
+  //         break;
+  //       case "View Roles":
+  //         viewAllRoles();
+  //         break;
+  //       case "View Departments":
+  //         viewAllDepartments();
+  //         break;
+  //       case "Add Employee":
+  //         addEmployee();
+  //         break;
+  //       case "Add Role":
+  //         addRole();
+  //         break;
+  //       case "Add Department":
+  //         addDepartment();
+  //         break;
+  //       case "Update Employee Role":
+  //         updateEmployeeRole();
+  //        break;
+  //       default:
+  //         init();
+  //     }
+  //   });
 }
 
-
+init();
 
 async function viewAllEmployees() {
   console.log("Viewing employees..")
@@ -86,7 +85,7 @@ async function viewAllDepartments() {
 
 
 async function addEmployee() {
-  try { // cREATE
+  try { 
     const allRoles = await database.role_view();
     const allManagers = await database.manager_view();
     newEmp = {};
@@ -200,7 +199,7 @@ async function updateEmployeeRole() {
     }]),
     console.log(updateEmp)
     await database.employee_update(updateEmp);
-    console.log("Updating employee role!!")
+    console.log("Updating employee role!")
     viewAllEmployees();
 
 
