@@ -13,7 +13,7 @@ Welcome to the employee tracker where you can find all the info you could want o
 You need to have NODE.js installed as well as the Inquirer, mySQL, and console.table.
 
 ## Usage
-run the file in integrated terminal, run node server.js and answer prompts to view or create data.
+run the file in integrated terminal, run node index.js and answer prompts to view or create data.
 
 ## Links
 Video link 
