@@ -16,3 +16,5 @@ You need to have NODE.js installed as well as the Inquirer, mySQL, and console.t
 run the file in integrated terminal, run node server.js and answer prompts to view or create data.
 
 ## Links
+Video link 
+https://drive.google.com/file/d/1OrAROIC2nI4HNcr4Fo9qSi_KAR1kuk9K/view?usp=sharing
